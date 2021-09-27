@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import menuItems from "constants/menu-items.json";
-import { MenuItem } from "components/menu-item/menu-item";
+import MenuItem from "components/menu-item/menu-item";
 
 ///////////////////////////////////////////////////////
 const Directory = () => {

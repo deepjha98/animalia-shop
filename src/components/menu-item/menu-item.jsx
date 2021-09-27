@@ -1,11 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { withRouter } from "react-router";
 ////////////////////////////////////////////////////////////////
 
 // THIS IS THE MENU ITEM COMPONENT
-export const MenuItem = ({ title, imageUrl, size }) => {
+const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
   return (
-    <div className={`menu-item ${size ? size : ""}`}>
+    <div
+      className={`menu-item ${size ? size : ""}`}
+      onClick={() => history.push(`${match.url}${linkUrl}`)}
+    >
       <div
         style={{ backgroundImage: `url(${imageUrl})` }}
         className="background-image"
@@ -26,3 +30,4 @@ MenuItem.protoTypes = {
 };
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ////////////////////////////////////////////////////////////////
+export default withRouter(MenuItem);
