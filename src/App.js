@@ -4,10 +4,12 @@ import { Route, Switch } from "react-router";
 ////////////////////////////////////////////////////////////
 import HomePage from "views/HomePage";
 import ShopPage from "views/shop";
+import Header from "components/header/header";
 
 function App() {
   return (
     <div>
+      <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/shop" component={ShopPage} />
