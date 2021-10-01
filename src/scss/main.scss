@@ -17,6 +17,12 @@
 @import "components/preview-collection";
 @import "components/collection-item";
 @import "components/header";
+@import "components/form-input";
+@import "components/sign-in";
+@import "components/custom-button";
 
 // 5. Page-specific styles
 @import "pages/home";
+
+// 6. utils
+@import "utils/utils";
