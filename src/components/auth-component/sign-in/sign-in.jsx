@@ -3,21 +3,27 @@ import FormInput from "components/form-input/form-input";
 import CustomButton from "components/custom-button/custom-button";
 
 // Firebase functions import for authentication
-import { signInWithGoogle } from "utils/firebase";
+import { auth, signInWithGoogle } from "utils/firebase";
 //////////////////////////////////////////////
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   // FORM SUBMIT HANDLE
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+    } catch (error) {
+      console.error(error);
+    }
     setEmail("");
     setPassword("");
   };
 
   const handleChange = (event) => {
     const { value, name } = event.target;
+
     name === "email" ? setEmail(value) : setPassword(value);
   };
 
