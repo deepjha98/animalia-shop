@@ -18,7 +18,9 @@
 @import "components/collection-item";
 @import "components/header";
 @import "components/form-input";
-@import "components/sign-in";
+@import "components/auth-components/auth-page";
+@import "components/auth-components/sign-in";
+@import "components/auth-components/sign-up";
 @import "components/custom-button";
 
 // 5. Page-specific styles
