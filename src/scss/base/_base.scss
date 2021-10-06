@@ -38,3 +38,17 @@ a {
   text-decoration: none;
   color: black;
 }
+
+//CUSTOM SCROLLBAR
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 7px rgba(82, 82, 82, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}

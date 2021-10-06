@@ -1,0 +1,15 @@
+//CUSTOM SCROLLBARS
+@mixin scrollBar {
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(202, 202, 202);
+    outline: 1px solid rgb(203, 210, 218);
+  }
+}

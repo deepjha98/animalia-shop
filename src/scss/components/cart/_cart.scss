@@ -34,11 +34,16 @@
   right: 40px;
   z-index: 5;
 
+  .empty-message {
+    font-size: 1.8rem;
+  }
+
   .cart-items {
     height: 240px;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow-y: scroll;
+    @include scrollBar();
   }
 
   button {
