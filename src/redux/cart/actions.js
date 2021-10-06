@@ -9,7 +9,15 @@ export const addItemToCart = (product) => ({
   payload: product,
 });
 
-export const removeItemFromCart = (id) => ({
+export const removeItemFromCart = (item) => ({
   type: CartActionTypes.REMOVE_ITEM_FROM_CART,
-  payload: id,
+  payload: item,
+});
+
+export const decreaseItem = (item) => ({
+  /*  THIS REMOVE ITEM IS FOR DECREASING THE ITEM IN THE CART\
+      AND EXECUTE
+  */
+  type: CartActionTypes.DECREASE_ITEM,
+  payload: item,
 });

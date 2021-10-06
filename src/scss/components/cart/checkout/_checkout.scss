@@ -25,6 +25,15 @@
       }
     }
   }
+  .quantity {
+    display: flex;
+    .arrow {
+      cursor: pointer;
+    }
+    .value {
+      margin: 0 1rem;
+    }
+  }
 
   .total {
     margin-top: 30px;
