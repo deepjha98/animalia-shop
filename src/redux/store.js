@@ -1,6 +1,7 @@
 import createSagaMiddleware from "redux-saga";
 import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
+import { persistStore } from "redux-persist";
 import thunk from "redux-thunk";
 import reducers from "redux/reducer";
 import logger from "redux-logger";
@@ -9,14 +10,16 @@ import logger from "redux-logger";
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware, thunk, logger];
 
-// CONFIGURE STORE
-export function configureStore(initialState) {
-  const store = createStore(
-    reducers,
-    initialState,
-    composeWithDevTools(applyMiddleware(...middlewares))
-  );
+const store = createStore(
+  reducers,
+  composeWithDevTools(applyMiddleware(...middlewares))
+);
 
+//PERSIST STORE
+export const persistor = persistStore(store);
+
+// CONFIGURE STORE
+export function configureStore() {
   window.STORE = store;
   if (module.hot) {
     module.hot.accept(reducers, () => {

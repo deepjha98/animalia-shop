@@ -15,7 +15,10 @@
 @import "components/directory-menu";
 @import "components/shop";
 @import "components/preview-collection";
-@import "components/collection-item";
+@import "components/collection/collection";
+@import "components/collection/collection-item";
+@import "components/collection/collection-overview";
+
 @import "components/header";
 @import "components/form-input";
 @import "components/auth-components/auth-page";
