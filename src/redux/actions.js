@@ -9,6 +9,11 @@ export const CartActionTypes = {
   DECREASE_ITEM: "DECREASE_ITEM",
 };
 
+// SHOP ACTION TYPES
+export const ShopActionTypes = {
+  UPDATE_COLLECTIONS: "UPDATE_COLLECTIONS",
+};
+
 // EXPORTING THE ACTIONS OF EACH FOLDER
 export * from "./user/actions";
 export * from "./cart/actions";
