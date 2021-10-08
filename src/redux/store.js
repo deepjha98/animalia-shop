@@ -8,7 +8,11 @@ import logger from "redux-logger";
 
 // MIDDLEWARES
 const sagaMiddleware = createSagaMiddleware();
-const middlewares = [sagaMiddleware, thunk, logger];
+const middlewares = [sagaMiddleware, thunk];
+
+if (process.env.NODE_ENV === "development") {
+  middlewares.push(logger);
+}
 
 const store = createStore(
   reducers,
