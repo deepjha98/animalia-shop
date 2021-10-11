@@ -1,34 +1,18 @@
-import React from "react";
 import { connect } from "react-redux";
-//////////////////////////////////////////////////////
-// COMPONENTS
-import CollectionItem from "components/preview-collection/collection-item/collection-item";
+import { compose } from "redux";
+import { createStructuredSelector } from "reselect";
 
-// SELECTORS
-import { selectCollection } from "redux/selectors";
+import { selectIsCollectionsLoaded } from "redux/selectors";
+import WithSpinner from "components/with-spinner/with-spinner";
+import CollectionPage from "./collection";
 
-export const Collection = ({ match, collection }) => {
-  const { title, items } = collection;
+const mapStateToProps = createStructuredSelector({
+  isLoading: (state) => !selectIsCollectionsLoaded(state),
+});
 
-  return (
-    <div className="collection-page">
-      <h2 className="title">{title}</h2>
-      <div className="items">
-        {items.map((item) => (
-          <CollectionItem key={item.id} item={item} />
-        ))}
-      </div>
-    </div>
-  );
-};
+const CollectionPageContainer = compose(
+  connect(mapStateToProps),
+  WithSpinner
+)(CollectionPage);
 
-//////////////////////////////////////////////////////
-const mapStateToProps = (state, ownProps) => {
-  return {
-    collection: selectCollection(ownProps.match.params.collectionId)(state),
-  };
-};
-
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Collection);
+export default CollectionPageContainer;

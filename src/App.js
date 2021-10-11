@@ -16,7 +16,7 @@ import ShopPage from "views/shop";
 import Header from "components/header/header";
 import SignInAndSignUp from "views/auth-page";
 import CheckOutPage from "views/checkout";
-
+import GlobalStyle from "global.styles";
 //SELECTORS
 import {
   selectCurrentUser,
@@ -69,6 +69,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <GlobalStyle />
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
